@@ -1,0 +1,259 @@
+% Una pagina
+\documentclass[12pt,openright,oneside,spanish]{book}
+% Doble pagina
+%\documentclass[12pt,openright,twoside,spanish]{book}
+
+\usepackage[utf8]{inputenc}
+\usepackage[spanish, es-tabla]{babel}
+% Para includegraphics
+\usepackage{graphicx}
+
+%Interlineado
+\usepackage{setspace}
+\setstretch{1.2}
+
+% Links
+\usepackage[hidelinks]{hyperref}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+
+% Marcadores
+\usepackage{bookmark}
+
+% Margenes
+\usepackage[top=3cm,bottom=3cm,left=4.2cm,right=3cm]{geometry}
+\pagestyle{empty} 
+% Numero de pagina
+\usepackage{fancyhdr}
+\fancyhead[L]{}
+\fancyhead[C]{}
+\fancyhead[R]{}
+\fancyfoot[L]{}
+% Pie de pagina derecha par
+% Pie de pagina izquierda impar
+%\fancyfoot[RO, LE]{\thepage}
+% Pie de pagina derecha todo
+\fancyfoot[R]{\thepage}
+\fancyfoot[C]{}
+% Linea superior pagina
+\renewcommand{\headrulewidth}{0pt}
+
+% Figuras .eps
+\usepackage{epstopdf}
+
+% Formato de Titulos
+\usepackage{titlesec}
+\titleformat*{\section}{\LARGE\bfseries\centering}
+
+% Cambiar Titulo Indice (con paquete babel)
+\addto\captionsspanish{
+	\renewcommand{\contentsname}
+	{Indice}
+}
+
+% Agrega pagina en blanco
+\usepackage{afterpage}
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    % Quita el numero de pagina
+    %\addtocounter{page}{-1}%
+    \newpage}
+
+% Imagen fondo de página
+\usepackage[pages=some]{background}
+% configuración
+\backgroundsetup {
+	scale=1, %escala de la imagen, es recomendable que sea del mismo tamaño que el pdf
+ 	color=black, %fondo a usar para transparencia
+ 	opacity=0.9, %nivel de transparencia
+ 	angle=0, %en caso de querer una rotación
+ 	contents={%
+ 	 	\includegraphics[width=\paperwidth,height=\paperheight]{./img/PortadaLow} %nombre de la imagen a utilizar como fondo
+ 	}%
+}
+% Agregar en la pagina donde se desee
+% el fondo de pagina
+% \BgThispage
+
+% Marca de agua
+\usepackage{draftwatermark}
+\SetWatermarkText{\textsc{Borrador}} % por defecto Draft 
+\SetWatermarkScale{5} % para que cubra toda la página
+\SetWatermarkColor[rgb]{0.91,0.91,0.91} % por defecto gris claro
+\SetWatermarkAngle{55} % respecto a la horizontal
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% 		Portada			%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Nuevos márgenes
+%\newgeometry{top=0cm,bottom=0cm,left=0cm,right=0cm}
+\newgeometry{top=8.2cm,bottom=3cm,left=4cm,right=4cm}
+%\newgeometry{top=20cm,bottom=3cm,left=4cm,right=4cm}
+\thispagestyle{empty}
+\include{01_Portada}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%		Encabezado		%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\lhead{\includegraphics[width=.20\textwidth]{./img/Tribal_02_left_mini.png}}
+\chead{\includegraphics[width=.24\textwidth]{./img/Tribal_01_mini.png}}
+\rhead{\includegraphics[width=.20\textwidth]{./img/Tribal_02_right_mini.png}}
+\renewcommand\headrulewidth{0.5pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%		Indice			%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Nuevos márgenes
+\newgeometry{top=3cm,bottom=4.6cm,left=4cm,right=3cm}
+
+% Interlineado
+\setstretch{1.4}
+
+\frontmatter
+\fancypagestyle{plain}{
+	% Pie de pagina derecha todo
+	\fancyfoot[R]{\thepage}
+%	\renewcommand\headrulewidth{0pt}
+}
+%\pdfbookmark{\contentsname}{Indice}
+\pdfbookmark[2]{Indice}{Indice}
+\tableofcontents
+
+%% Pagina en blanco
+%\afterpage{\blankpage}
+%\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%		Contenido		%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Interlineado
+\setstretch{1.2}
+
+\mainmatter
+\pagestyle{fancy}
+\fancypagestyle{plain}{
+	\fancyfoot[R]{\thepage}
+%	\renewcommand\headrulewidth{0pt}
+}
+\newcounter{descripcion}
+\renewcommand{\thedescripcion}{Descripcion}
+\include{02_Descripcion}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcounter{silencio}
+\renewcommand{\thesilencio}{silencio}
+\pagestyle{fancy}
+\include{03_Silencio}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcounter{avedelocaso}
+\renewcommand{\theavedelocaso}{avedelocaso}
+\pagestyle{fancy}
+\include{04_Ave_del_Ocaso}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcounter{sensaciones}
+\renewcommand{\thesensaciones}{sensaciones}
+\pagestyle{fancy}
+\include{05_Sensaciones}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcounter{elfuegoseha}
+\renewcommand{\theelfuegoseha}{elfuegoseha}
+\pagestyle{fancy}
+\include{06_El_Fuego_se_ha_de_Mantener}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcounter{marprofundo}
+\renewcommand{\themarprofundo}{marprofundo}
+\pagestyle{fancy}
+\include{07_Mar_Profundo}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcounter{undiamas}
+\renewcommand{\theundiamas}{undiamas}
+\pagestyle{fancy}
+\include{08_Un_Dia_Mas}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcounter{hanacido}
+\renewcommand{\thehanacido}{hanacido}
+\pagestyle{fancy}
+\include{09_Ha_Nacido}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcounter{viajeestelarone}
+\renewcommand{\theviajeestelarone}{viajeestelarone}
+\pagestyle{fancy}
+\include{10_Viaje_Estelar_p1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcounter{viajeestelartwo}
+\renewcommand{\theviajeestelartwo}{viajeestelartwo}
+\pagestyle{fancy}
+\include{10_Viaje_Estelar_p2}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcounter{vueloenelhor}
+\renewcommand{\thevueloenelhor}{vueloenelhor}
+\pagestyle{fancy}
+\include{11_Vuelo_en_el_Horizonte}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcounter{instante}
+\renewcommand{\theinstante}{instante}
+\pagestyle{fancy}
+\include{12_Instante}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcounter{oscuropasar}
+\renewcommand{\theoscuropasar}{oscuropasar}
+\pagestyle{fancy}
+\include{13_Un_Oscuro_Pasar}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcounter{heroe}
+\renewcommand{\theheroe}{heroe}
+\pagestyle{fancy}
+\include{14_Heroe}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcounter{ilusion}
+\renewcommand{\theilusion}{ilusion}
+\pagestyle{fancy}
+\include{15_Ilusion}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcounter{enelfindelmundo}
+\renewcommand{\theenelfindelmundo}{enelfindelmundo}
+\pagestyle{fancy}
+\include{16_En_el_Fin_del_Mundo}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcounter{amorincondicional}
+\renewcommand{\theamorincondicional}{amorincondicional}
+\pagestyle{fancy}
+\include{17_Amor_Incondicional}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcounter{espejo}
+\renewcommand{\theespejo}{espejo}
+\pagestyle{fancy}
+\include{18_Espejo}
+		
+		
+		
+\end{document}
