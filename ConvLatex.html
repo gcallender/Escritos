@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+	<title>Text Converter </title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="css/responsive_design_40cols.css" rel="stylesheet" type="text/css" />
+	<link href="css/styleConvLatex.css" rel="stylesheet" type="text/css" />
+	<script src="js/JSConvLatex.js"></script>	
+</head>
+
+<body>		
+	<!-- Header -->
+	<div class="header">
+		<h1>Latex Converter </h1>
+	</div>
+	
+	<!-- Body Content -->
+	<div class="row">
+	<!-- Center -->
+	<div class="col-nor-40 col-big-40 col-med-40 col-sm-40">
+		<h2>Convert Text to Latex Format</h2>
+		<div class="back_code">
+			<textarea id="code_a" class="lSide" placeholder="Copy or Write your Text here ..." autofocus></textarea>
+			<textarea id="code_b" class="rSide" onclick="this.focus();this.select()"
+				placeholder="Resultant code ..." readonly></textarea>
+			<button class="btn01" onclick="conv_code()">Convert code</button>
+			<button class="btn01" onclick="reset_code()">Reset</button>
+            
+            <div class="center_text">
+            <label for="code_type">Select Code:</label> <br>
+            <select id="code_type">
+                <option>Latex</option>
+                <option>Blog</option>
+            </select>
+            </div>
+		</div>
+	</div>
+	
+	</div>
+	
+	
+	<script>
+		reset_code();
+        document.getElementById("code_type").value = "Latex";
+	</script>
+	
+	
+</body>
+</html>
+
+
