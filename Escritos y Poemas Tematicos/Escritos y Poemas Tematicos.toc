@@ -22,3 +22,5 @@
 \contentsline {section}{La Reuni\IeC {\'o}n}{39}{laReunion.1}
 \contentsline {section}{Hojas al Viento}{42}{hojasViento.1}
 \contentsline {section}{El Verso se hizo Carne}{44}{versoCarne.1}
+\contentsline {section}{Reflexi\IeC {\'o}n}{46}{reflexion.1}
+\contentsline {section}{Relato de un Viaje}{48}{relatoViaje.1}
