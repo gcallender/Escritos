@@ -24,3 +24,5 @@
 \contentsline {section}{El Verso se hizo Carne}{44}{versoCarne.1}
 \contentsline {section}{Reflexi\IeC {\'o}n}{46}{reflexion.1}
 \contentsline {section}{Relato de un Viaje}{48}{relatoViaje.1}
+\contentsline {section}{Evoluci\IeC {\'o}n}{51}{evolucion.1}
+\contentsline {section}{Un Simple Andar}{53}{simpleAndar.1}
